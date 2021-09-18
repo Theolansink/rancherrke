@@ -1,8 +1,12 @@
+echo "Wat is het IP-adres van de huidige VM:"
+read IPHOST
+echo "als IP is $IPHOST ingevuld"
+
 ###########################################################
 # genereer ssh-key voor huidige non-root user voor toegang met ssh tot cluster
 ###########################################################
 ssh-keygen
-ssh-copy-id -i ~/.ssh/id_rsa.pub theo@10.10.41.117
+ssh-copy-id -i ~/.ssh/id_rsa.pub $USER@$IPHOST
 echo -e "\n\n ssh-keys geinstalleerd \n\n"
 ###########################################################
 # installeer RKE kubernetes
