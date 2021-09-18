@@ -10,8 +10,7 @@ echo -e "\n\n ssh-keys geinstalleerd \n\n"
 wget https://github.com/rancher/rke/releases/download/v1.2.12/rke_linux-amd64
 mv rke_linux-amd64 rke
 chmod +x rke
-PATH=$PATH:.
-export PATH
+export PATH=$PATH:.
 echo -e "\n\n RKE gedownload en gerenamed naar rke \n\n"
 ###########################################################
 # installeer rke door config aan te roepen; geef ip adres host, usernaam huidige user, naam host (node1)
