@@ -44,6 +44,7 @@ echo -e "\n\n kubectl geinstalleerd \n\n"
 ###########################################################
 # start kubernetes cluster
 ###########################################################
+sudo systemctl restart docker
 rke up
 echo -e "\n\n rke cluster is op \n\n"
 ###########################################################
@@ -68,7 +69,7 @@ helm repo add rancher-stable https://releases.rancher.com/server-charts/stable
 kubectl create namespace cattle-system
 helm install rancher rancher-stable/rancher \
   --namespace cattle-system \
-  --set hostname=rancher.org \
+  --set hostname=myrancher.com \
   --set bootstrapPassword=admin
 echo -e "\n\n rancher geinstalleerd \n\n"
 ###########################################################
